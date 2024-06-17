@@ -44,14 +44,6 @@ async function fetchWeather() {
         }
 
         const data = await response.json();
-        weatherDataSection.innerHTML = `
-        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" width="100" />
-        <div>
-            <h2>${data.name}</h2>
-            <p><strong>Temperatura:</strong> ${Math.round(data.main.temp - 273.15)}°C</p>
-            <p><strong>Descripcion:</strong> ${data.weather[0].description}</p>
-        </div>
-        `
         weatherDataSection.style.display = "flex";
         weatherDataSection.innerHTML = `
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="${data.weather[0].description}" width="100" />
